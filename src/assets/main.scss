@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+$primary: #265241;
+$secondary: #e1eee8;
+
+@mixin btn {
+  padding: 1rem;
+  width: 12rem;
+  border: 3px solid $primary;
+  background-color: $secondary;
+  color: $primary;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
