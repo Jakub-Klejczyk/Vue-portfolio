@@ -12,6 +12,7 @@ import {
   faEnvelope,
   faBriefcase,
   faPlay,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -25,7 +26,8 @@ library.add(
   faEnvelope,
   faBriefcase,
   faGithub,
-  faPlay
+  faPlay,
+  faBars
 );
 
 const app = createApp(App);

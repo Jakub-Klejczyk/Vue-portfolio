@@ -78,6 +78,7 @@ section {
 
 .buttons {
   padding: 4rem;
+  animation: 1s ease-out ease_header;
   button {
     @include btn;
     width: auto;
@@ -95,11 +96,13 @@ h2 {
   font-weight: 700;
   padding-bottom: 2rem;
   padding-left: 4rem;
+  animation: 1s ease-out ease_header;
 }
 
 .container {
   padding-inline: 4rem;
   width: 100%;
+  animation: 1s ease-out ease_down;
   .item-eductaion {
     display: flex;
     justify-content: space-between;
@@ -128,6 +131,37 @@ h2 {
       font-weight: 700;
       padding-bottom: 1rem;
     }
+  }
+}
+
+@media (max-width: 1150px) {
+  section {
+    margin: 0 0 0rem 0rem;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    height: 100vh;
+    padding-block: 2rem;
+  }
+  .buttons {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 30rem;
+  }
+  .item-eductaion {
+    flex-direction: column;
+    height: auto !important;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .item-experience {
+    flex-direction: column;
+    height: auto !important;
+  }
+  h2 {
+    padding-left: 2rem;
   }
 }
 </style>

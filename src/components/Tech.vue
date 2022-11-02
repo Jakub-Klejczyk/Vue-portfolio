@@ -55,6 +55,10 @@ section {
     font-size: 3rem;
     font-weight: 700;
     padding-bottom: 2rem;
+    animation: 1s ease-out ease_header;
+  }
+  .list {
+    animation: 1s ease-out ease_item;
   }
 }
 .container {
@@ -70,6 +74,26 @@ section {
     font-size: 1.4rem;
     padding-bottom: 1rem;
     margin-left: 2rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  section {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    h2 {
+      padding-top: 2rem;
+    }
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 </style>

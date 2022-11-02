@@ -1,5 +1,5 @@
 <script>
-import CV from "../assets/CV Jakub Klejczyk.pdf";
+import CV from "../assets/CVJakubKlejczyk.pdf";
 
 export default {
   name: "Fold",
@@ -50,6 +50,7 @@ section {
   img {
     width: 50rem;
     overflow: hidden;
+    animation: 1s ease-out ease_item;
   }
 }
 
@@ -66,19 +67,22 @@ section {
     margin-bottom: 1rem;
     padding-inline: 2rem;
     border-left: 3px solid $primary;
+    animation: 3s ease-out ease_hight;
     h1 {
       font-size: 4rem;
+      animation: 1s ease-out ease_right;
     }
     h3 {
       font-size: 2rem;
       font-weight: 500;
+      animation: 1.6s ease-out ease_right;
     }
   }
   .goto {
     margin-top: 1rem;
     display: flex;
     gap: 2rem;
-
+    animation: 1s ease-out ease_down;
     button {
       @include btn;
     }
@@ -89,5 +93,42 @@ section {
   text-decoration: none;
   text-align: center;
   @include btn;
+}
+@media (max-width: 1150px) {
+  .logo {
+    display: none;
+  }
+
+  section {
+    margin-left: 0rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item {
+    width: 100%;
+    height: 90vh;
+  }
+
+  .goto {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 650px) {
+  .text {
+    text-align: center;
+    border-left: none !important;
+    border-bottom: 3px solid $primary;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+  h3 {
+    font-size: 2rem !important;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
 }
 </style>

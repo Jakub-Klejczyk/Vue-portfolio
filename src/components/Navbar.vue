@@ -1,13 +1,15 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      active: false,
+    };
   },
 };
 </script>
 
 <template>
-  <nav>
+  <nav class="desctop">
     <RouterLink to="/"
       ><font-awesome-icon icon="fa-solid fa-house" class="icon"
     /></RouterLink>
@@ -27,12 +29,61 @@ export default {
       ><font-awesome-icon icon="fa-solid fa-envelope" class="icon"
     /></RouterLink>
   </nav>
+  <font-awesome-icon
+    icon="fa-solid fa-bars"
+    class="hamburger"
+    @click="active = !active"
+  />
+  <nav class="mobile" :class="{ 'active-nav': active }">
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/"
+      >Strona główna</RouterLink
+    >
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/about"
+      >O mnie</RouterLink
+    >
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/technology"
+      >Technologie</RouterLink
+    >
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/experience"
+      >Doświadczenie</RouterLink
+    >
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/projects"
+      >Projekty</RouterLink
+    >
+    <RouterLink
+      @click="active = !active"
+      class="link-mobile"
+      :class="{ 'active-list': active }"
+      to="/contact"
+      >Kontakt</RouterLink
+    >
+  </nav>
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/main.scss";
 
-nav {
+.desctop {
   position: absolute;
   height: 100vh;
   width: 8rem;
@@ -43,9 +94,71 @@ nav {
   justify-content: space-evenly;
 }
 
+.mobile {
+  display: none;
+}
+
 .icon {
   width: 2rem;
   height: 2rem;
   color: $secondary;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .desctop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    right: 0;
+    color: $secondary;
+  }
+
+  .mobile {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    right: 0;
+    background-color: $primary;
+
+    .link-mobile {
+      color: $secondary;
+      text-decoration: none;
+      font-size: 1.4rem;
+      border: 3px solid $secondary;
+      width: 90%;
+      height: 10%;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+    .active-list {
+      display: flex;
+    }
+  }
+
+  .active-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 10vh;
+  }
 }
 </style>

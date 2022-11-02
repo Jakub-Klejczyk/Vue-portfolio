@@ -36,7 +36,7 @@ export default {
         </div>
       </div>
       <div class="item">
-        <h3>Wyszukiwarka repozytorium Github</h3>
+        <h3>Wyszukiwarka repozytoriów Github</h3>
         <img
           src="../assets/github.png"
           alt="strona główna projektu Portal Shop"
@@ -52,7 +52,7 @@ export default {
             target="_blank"
             ><font-awesome-icon icon="fa-brands fa-github" class="icon"
           /></a>
-          <a href="https://portal-shop-project.netlify.app/" target="_blank"
+          <a href="https://wyszukiwarka-github.netlify.app" target="_blank"
             ><font-awesome-icon icon="fa-solid fa-play" class="icon"
           /></a>
         </div>
@@ -75,6 +75,7 @@ section {
     font-size: 3rem;
     font-weight: 700;
     padding-bottom: 2rem;
+    animation: 1s ease-out ease_header;
   }
 }
 
@@ -84,14 +85,15 @@ section {
   align-items: center;
   gap: 10%;
   .item {
-    width: 30rem;
+    max-width: 30rem;
     color: $secondary;
     background-color: $primary;
-    height: 34rem;
+    min-height: 34rem;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    animation: 1s ease-out ease_item;
     h3 {
       text-align: center;
       font-size: 2rem;
@@ -115,6 +117,21 @@ section {
         color: $secondary;
       }
     }
+  }
+}
+
+@media (max-width: 1150px) {
+  section {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 2rem;
+  }
+  .container {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 </style>

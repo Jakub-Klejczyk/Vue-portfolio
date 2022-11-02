@@ -13,10 +13,14 @@ export default {
     <div class="cointainer">
       <div class="elem-left"></div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-        earum accusantium maxime possimus quae fugiat nisi est sequi, tenetur
-        quod, aliquam deserunt dolor. Asperiores adipisci eveniet obcaecati
-        accusantium dolore ex nesciunt autem.
+        Nazywam się Jakub Klejczyk. Jestem Web Developerem koncentrującym się na
+        warstwie Front-endowej. Pracuje głównie przy wykorzystaniu Vue.js.
+        Systematycznie staram się rozwijać swój stack technologiczny. Obecnie
+        uczę się TypeScriptu, a w najbliższym czasie planuje doedukować się w
+        zakresie tworzenia testów jednostkowych i end-to-end. Miałem również
+        doczynienia z językiem PHP, zatem świat Back-endu nie jest mi całkowicie
+        obcy. Chciałbym dalej rozwijać się w tworzeniu aplikacj webowych typu
+        single page.
       </p>
       <div class="elem-right"></div>
     </div>
@@ -40,6 +44,7 @@ section {
   h2 {
     font-size: 3rem;
     font-weight: 700;
+    animation: 1s ease-out ease_header;
   }
   p {
     width: 60%;
@@ -60,6 +65,7 @@ section {
     position: relative;
     top: -50%;
     right: -1rem;
+    animation: rotation 2s infinite ease-in-out;
   }
   .elem-right {
     width: 2rem;
@@ -68,6 +74,19 @@ section {
     position: relative;
     top: 50%;
     right: 1rem;
+    animation: rotation 2s infinite ease-in-out;
+  }
+}
+
+@media (max-width: 1150px) {
+  section {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    height: 90vh;
+    padding-bottom: 2rem;
+    padding-top: 38rem;
   }
 }
 </style>
