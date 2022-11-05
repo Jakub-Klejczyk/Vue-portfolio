@@ -69,9 +69,8 @@ section {
   color: $primary;
 
   img {
-    width: 16rem;
+    width: 12rem;
     animation: 2s ease-out ease_item;
-    float: right;
   }
 
   h2 {
