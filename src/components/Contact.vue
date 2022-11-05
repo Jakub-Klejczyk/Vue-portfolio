@@ -60,7 +60,12 @@ export default {
         !this.subject ||
         !this.content
       ) {
-        this.error = "Nie uzupełniono formularza";
+        if (!this.ang) {
+          this.error = "Nie uzupełniono formularza";
+        } else {
+          this.error = "Form has not been completed";
+        }
+
         setTimeout(() => {
           this.error = "";
         }, 5000);
@@ -77,7 +82,12 @@ export default {
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
       if (!validateEmail) {
-        this.error = "Niepoprawny adres e-mail";
+        if (!this.ang) {
+          this.error = "Niepoprawny adres e-mail";
+        } else {
+          this.error = "Incorrect email adress";
+        }
+
         setTimeout(() => {
           this.error = "";
         }, 5000);
@@ -103,13 +113,22 @@ export default {
         )
         .then(
           (res) => {
-            this.error = "Wysłano wiadomość. Dzięki!";
+            if (!this.ang) {
+              this.error = "Wysłano wiadomość. Dzięki!";
+            } else {
+              this.error = "Message has been sent. Thanks!";
+            }
+
             setTimeout(() => {
               this.error = "";
             }, 5000);
           },
           (error) => {
-            this.erro = "Coś poszło nie tak, spróbuj ponownie.";
+            if (!this.ang) {
+              this.error = "Coś poszło nie tak, spróbuj ponownie.";
+            } else {
+              this.error = "Something went worng. Please, try again.";
+            }
             setTimeout(() => {
               this.error = "";
             }, 5000);
