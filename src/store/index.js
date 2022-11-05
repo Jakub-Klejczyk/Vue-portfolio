@@ -29,7 +29,7 @@ const store = createStore({
     },
     tech: {
       pol: ["Technologie", "Znane", "Uczę się"],
-      ang: ["Tech stack", "Well known", "Studying"],
+      ang: ["Tech stack", "Well known", "Learning"],
     },
     navbar: {
       pol: [
@@ -52,11 +52,11 @@ const store = createStore({
     about: {
       pol: [
         "O mnie",
-        "Nazywam się Jakub Klejczyk. Jestem Web Developerem koncentrującym się na warstwie Front-endowej. Pracuje głównie przy wykorzystaniu Vue.js. Systematycznie staram się rozwijać swój stack technologiczny. Obecnie uczę się TypeScriptu, a w najbliższym czasie planuje doedukować się w zakresie tworzenia testów jednostkowych i end-to-end. Miałem również doczynienia z językiem PHP, zatem świat Back-endu nie jest mi całkowicie obcy. Chciałbym dalej rozwijać się w tworzeniu aplikacj webowych typu single page.",
+        "Nazywam się Jakub Klejczyk. Jestem Web Developerem koncentrującym się na warstwie Front-endowej. Pracuje głównie przy wykorzystaniu Vue.js. Systematycznie staram się rozwijać swój stack technologiczny. Obecnie uczę się TypeScriptu, a w najbliższym czasie planuje doedukować się w zakresie tworzenia testów jednostkowych i end-to-end. Miałem również doczynienia z językiem PHP, zatem świat Back-endu nie jest mi całkowicie obcy. Chciałbym dalej rozwijać się w tworzeniu aplikacji webowych typu single page.",
       ],
       ang: [
         "About",
-        "I am Jakub Klejczyk. I'm Web Developer focused on the Front-end side of application. Mainly I work in Vue.js. Systematically I'm trying to develop my technology stack. Currently I am learing TypeScript and in the near future I plan to learn unit and end-to-end test. I have also dealt with PHP, so server side is not completely unfamiliar for me. I would like to improve in developing single page web application.",
+        "Jakub Klejczyk - Web Developer focused on the Front-end side of application. Mainly I work in Vue.js. Systematically I am trying to develop my technology stack. Currently I am learing TypeScript and in the near future I plan to learn unit and end-to-end test. I had contanct with PHP, so server side is not completely unfamiliar for me. I would like to improve in developing single page web application.",
       ],
     },
     projects: {
@@ -68,9 +68,9 @@ const store = createStore({
       ],
       ang: [
         "Projects",
-        "Projects in my Opus Magnum. To create it I used all technologies that I learned. Portal Shop is a simulation of an online store. Project allows you to create a user account, familiarize yourself with the home page and manage the cart.",
+        "Project is my Opus Magnum. To create it I used all technologies that I learned. Portal Shop is a simulation of an online store. Project allows you to create a user account, familiarize yourself with the home page and manage the cart.",
         "Github repository search engine",
-        "I created this project to learn using REST API which is commonly used in web application.",
+        "I created this project to learn how to use REST API which is commonly used in web application.",
       ],
     },
     exp: {
@@ -82,7 +82,7 @@ const store = createStore({
         "Gromadzenie oraz analiza danych zastanych",
         "Przygotowywanie wizualizacji danych statystycznych",
         "Przygotowywanie dokumentów strategicznych w zespole",
-        "Przygotowywanie dokumentów strategicznych w samodzielnie",
+        "Przygotowywanie dokumentów strategicznych samodzielnie",
         "Reprezentowanie firmy w kraju na Sesjach Rady Gminy/Miasta, spotkaniach z klientami oraz warsztatach strategicznych",
         "Reprezentowanie firmy za granicą w ramach projektu europejskiego Silesia-Brandenburg Dual Education in Innovation",
         "Edukacja",
@@ -96,8 +96,8 @@ const store = createStore({
         "Support and maintance of corporate websites",
         "Existing data gathering and analysis",
         "Preperation and visualizaition of statistics",
-        "Strategic documents developing in a team",
-        "Strategic documents developing independently",
+        "Strategic documents development in a team",
+        "Strategic documents development independently",
         "Representing the company in the country at Sessions of the Commune Council, meetings with clients and strategic workshops",
         "Representing the company abroad in European project Silesia-Brandenburg Dual Education in Innovation",
         "Education",
