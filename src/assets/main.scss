@@ -48,6 +48,15 @@ $secondary: #e1eee8;
   }
 }
 
+@keyframes ease_top {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes ease_right {
   0% {
     transform: translateX(100%);

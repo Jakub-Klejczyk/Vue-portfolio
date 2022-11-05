@@ -1,5 +1,5 @@
 <script>
-import CV from "../assets/CVJakubKlejczyk.pdf";
+import CV from "../assets/CVJakubKlejczykEng.pdf";
 
 export default {
   name: "Fold",
@@ -14,16 +14,20 @@ export default {
 <template>
   <section>
     <div class="logo">
-      <img src="../assets/logo-biale.png" alt="logo Jakub Klejczyk" />
+      <img src="../assets/logo-jasno-zielone.svg" alt="logo Jakub Klejczyk" />
     </div>
     <div class="item">
+      <img
+        class="dark-logo"
+        src="../assets/logo-ciemno-zielone.svg"
+        alt="logo Jakub Klejczyk"
+      />
       <div class="text">
         <h1>Jakub Klejczyk</h1>
         <h3>Front-end Developer</h3>
       </div>
       <div class="goto">
         <a class="link" :href="cv" target="_blank">Pobierz CV</a>
-
         <RouterLink class="link" to="/contact">Wyślij wiadomość</RouterLink>
       </div>
     </div>
@@ -48,9 +52,9 @@ section {
   align-items: center;
   justify-content: center;
   img {
-    width: 50rem;
+    width: 26rem;
     overflow: hidden;
-    animation: 1s ease-out ease_item;
+    animation: 2s ease-out ease_item;
   }
 }
 
@@ -61,6 +65,9 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  .dark-logo {
+    display: none;
+  }
 
   .text {
     color: $primary;
@@ -108,10 +115,15 @@ section {
   .item {
     width: 100%;
     height: 90vh;
-  }
-
-  .goto {
-    flex-direction: column;
+    .dark-logo {
+      display: block;
+      width: 6rem;
+      padding-bottom: 2rem;
+      animation: 2s ease-out ease_item;
+    }
+    .goto {
+      flex-direction: column;
+    }
   }
 }
 

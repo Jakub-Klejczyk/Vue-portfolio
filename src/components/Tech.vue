@@ -14,13 +14,29 @@ export default {
       <div class="list">
         <h3>Znane:</h3>
         <ul>
-          <li>Vue / Vuex / Vue Router</li>
-          <li>JavaScript (ES6+)</li>
+          <li>
+            Vue / Vuex / Vue Router
+            <font-awesome-icon class="icon" icon="fa-brands fa-vuejs" />
+          </li>
+          <li>
+            JavaScript (ES6+)
+            <font-awesome-icon class="icon" icon="fa-brands fa-square-js" />
+          </li>
           <li>REST API</li>
-          <li>CSS / Sass</li>
-          <li>HTML</li>
-          <li>Git / Github</li>
-          <li>Npm</li>
+          <li>
+            CSS / Sass
+            <font-awesome-icon class="icon" icon="fa-brands fa-sass" />
+          </li>
+          <li>
+            HTML <font-awesome-icon class="icon" icon="fa-brands fa-html5" />
+          </li>
+          <li>
+            Git / Github
+            <font-awesome-icon class="icon" icon="fa-brands fa-github" />
+          </li>
+          <li>
+            Npm <font-awesome-icon class="icon" icon="fa-brands fa-npm" />
+          </li>
           <li>Firebase</li>
           <li>Webpack</li>
           <li>Babel</li>
@@ -31,7 +47,9 @@ export default {
         <ul>
           <li>TypeScript</li>
           <li>Cypress</li>
-          <li>PHP</li>
+          <li>
+            PHP <font-awesome-icon class="icon" icon="fa-brands fa-php" />
+          </li>
           <li>MySQL</li>
         </ul>
       </div>
@@ -59,6 +77,10 @@ section {
   }
   .list {
     animation: 1s ease-out ease_item;
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 .container {

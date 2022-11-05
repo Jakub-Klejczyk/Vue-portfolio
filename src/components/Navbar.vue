@@ -40,6 +40,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/"
+      id="li-one"
       >Strona główna</RouterLink
     >
     <RouterLink
@@ -47,6 +48,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/about"
+      id="li-two"
       >O mnie</RouterLink
     >
     <RouterLink
@@ -54,6 +56,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/technology"
+      id="li-three"
       >Technologie</RouterLink
     >
     <RouterLink
@@ -61,6 +64,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/experience"
+      id="li-four"
       >Doświadczenie</RouterLink
     >
     <RouterLink
@@ -68,6 +72,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/projects"
+      id="li-five"
       >Projekty</RouterLink
     >
     <RouterLink
@@ -75,6 +80,7 @@ export default {
       class="link-mobile"
       :class="{ 'active-list': active }"
       to="/contact"
+      id="li-six"
       >Kontakt</RouterLink
     >
   </nav>
@@ -147,6 +153,30 @@ export default {
     .active-list {
       display: flex;
     }
+  }
+
+  #li-one {
+    animation: 0.4s ease-out ease_top;
+  }
+
+  #li-two {
+    animation: 0.6s ease-out ease_top;
+  }
+
+  #li-three {
+    animation: 0.8s ease-out ease_top;
+  }
+
+  #li-four {
+    animation: 1s ease-out ease_top;
+  }
+
+  #li-five {
+    animation: 1.2s ease-out ease_top;
+  }
+
+  #li-six {
+    animation: 1.4s ease-out ease_top;
   }
 
   .active-nav {

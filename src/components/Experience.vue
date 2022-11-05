@@ -54,8 +54,15 @@ export default {
       <h2>Edukacja</h2>
       <div class="container">
         <div class="item-eductaion">
-          <p>Politechnika Śląska - 2022</p>
-          <p>Zarządzanie projektami adaptacyjnymi</p>
+          <p>Politechnika Śląska - 2021-2022</p>
+          <p>
+            Zarządzanie projektami adaptacyjnymi - uzyskanie wykształcenia
+            wyższego
+          </p>
+        </div>
+        <div class="item-eductaion">
+          <p>Akademia WSB Cieszyn - 2019-2021</p>
+          <p>Studia menadżerskie</p>
         </div>
         <div class="item-eductaion">
           <p>First Certificate in English (B2) - 2018</p>

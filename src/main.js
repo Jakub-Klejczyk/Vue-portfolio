@@ -15,7 +15,15 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faHtml5,
+  faNpm,
+  faPhp,
+  faSass,
+  faSquareJs,
+  faVuejs,
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faUserSecret,
@@ -27,7 +35,13 @@ library.add(
   faBriefcase,
   faGithub,
   faPlay,
-  faBars
+  faBars,
+  faVuejs,
+  faSquareJs,
+  faSass,
+  faHtml5,
+  faNpm,
+  faPhp
 );
 
 const app = createApp(App);

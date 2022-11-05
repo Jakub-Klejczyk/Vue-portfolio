@@ -10,7 +10,7 @@ export default {
 <template>
   <section>
     <h2>O mnie</h2>
-    <div class="cointainer">
+    <div class="container">
       <div class="elem-left"></div>
       <p>
         Nazywam się Jakub Klejczyk. Jestem Web Developerem koncentrującym się na
@@ -24,6 +24,7 @@ export default {
       </p>
       <div class="elem-right"></div>
     </div>
+    <img src="../assets/logo-ciemno-zielone.svg" alt="" />
   </section>
 </template>
 
@@ -41,6 +42,13 @@ section {
   justify-content: center;
   gap: 2rem;
   color: $primary;
+
+  img {
+    width: 16rem;
+    animation: 2s ease-out ease_item;
+    float: right;
+  }
+
   h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -53,7 +61,7 @@ section {
     padding: 2rem;
   }
 
-  .cointainer {
+  .container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +88,15 @@ section {
 
 @media (max-width: 1150px) {
   section {
+    justify-content: flex-start;
     margin: 0;
     align-items: center;
-    justify-content: center;
     overflow: auto;
-    height: 90vh;
     padding-bottom: 2rem;
-    padding-top: 38rem;
+
+    h2 {
+      padding-top: 2rem;
+    }
   }
 }
 </style>
