@@ -1,6 +1,6 @@
 <script>
 import { mapGetters, mapState } from "vuex";
-import CV from "../assets/CVJakubKlejczykEng.pdf";
+import CV from "../assets/CVJakubKlejczyk.pdf";
 
 export default {
   name: "Fold",
