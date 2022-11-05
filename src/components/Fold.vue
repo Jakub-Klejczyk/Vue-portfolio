@@ -1,4 +1,5 @@
 <script>
+import { mapGetters, mapState } from "vuex";
 import CV from "../assets/CVJakubKlejczykEng.pdf";
 
 export default {
@@ -6,13 +7,42 @@ export default {
   data() {
     return {
       cv: CV,
+      ang: this.getLang(),
+      msg: "",
+      btn: "",
+      data: this.getDataFromFold(),
     };
+  },
+  methods: {
+    ...mapGetters(["getDataFromFold", "getLang"]),
+
+    render() {
+      if (!this.ang) {
+        this.btn = this.data.pol[0];
+        this.msg = this.data.pol[1];
+      } else {
+        this.btn = this.data.ang[0];
+        this.msg = this.data.ang[1];
+      }
+    },
+  },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
   },
 };
 </script>
 
 <template>
-  <section>
+  <section id="section">
     <div class="logo">
       <img src="../assets/logo-jasno-zielone.svg" alt="logo Jakub Klejczyk" />
     </div>
@@ -27,8 +57,8 @@ export default {
         <h3>Front-end Developer</h3>
       </div>
       <div class="goto">
-        <a class="link" :href="cv" target="_blank">Pobierz CV</a>
-        <RouterLink class="link" to="/contact">Wyślij wiadomość</RouterLink>
+        <a class="link" :href="cv" target="_blank" :key="btn">{{ btn }}</a>
+        <RouterLink class="link" to="/contact">{{ msg }}</RouterLink>
       </div>
     </div>
   </section>

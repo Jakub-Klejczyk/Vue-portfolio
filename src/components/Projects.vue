@@ -1,15 +1,53 @@
 <script>
+import { mapGetters, mapState } from "vuex";
+
 export default {
   name: "Projects",
   data() {
-    return {};
+    return {
+      header: "",
+      portal_decs: "",
+      git_header: "",
+      git_desc: "",
+      ang: this.getLang(),
+      data: this.getDataFromProjects(),
+    };
+  },
+  methods: {
+    ...mapGetters(["getDataFromProjects", "getLang"]),
+
+    render() {
+      if (!this.ang) {
+        this.header = this.data.pol[0];
+        this.portal_decs = this.data.pol[1];
+        this.git_header = this.data.pol[2];
+        this.git_desc = this.data.pol[3];
+      } else {
+        this.header = this.data.ang[0];
+        this.portal_decs = this.data.ang[1];
+        this.git_header = this.data.ang[2];
+        this.git_desc = this.data.ang[3];
+      }
+    },
+  },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
   },
 };
 </script>
 
 <template>
   <section>
-    <h2>Projekty</h2>
+    <h2>{{ header }}</h2>
     <div class="container">
       <div class="item">
         <h3>Portal Shop</h3>
@@ -18,10 +56,7 @@ export default {
           alt="strona główna projektu Portal Shop"
         />
         <p>
-          Projekt stanowi moje Opus Magnum. Do jego powstania wykorzystane
-          zostały wszystkie technologie jakie udało mi się poznać. Portal Shop
-          jest symulacją sklepu internetowego. Pozwala na stowrzenie konta
-          użytkownika, zapoznanie się ze stroną główną oraz obsługę koszyka.
+          {{ portal_decs }}
         </p>
         <p>Vue, Vuex, Vue-Router, TypeScript, Scss, Firebase</p>
         <div class="links">
@@ -36,14 +71,13 @@ export default {
         </div>
       </div>
       <div class="item">
-        <h3>Wyszukiwarka repozytoriów Github</h3>
+        <h3>{{ git_header }}</h3>
         <img
           src="../assets/github.png"
           alt="strona główna projektu Portal Shop"
         />
         <p>
-          Powstała w celu nauki obsługi REST API powszechnie wykorzystywanej w
-          aplikacjach webowych.
+          {{ git_desc }}
         </p>
         <p>Vue, REST API</p>
         <div class="links">

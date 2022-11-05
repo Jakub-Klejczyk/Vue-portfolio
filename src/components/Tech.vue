@@ -1,18 +1,53 @@
 <script>
+import { mapGetters, mapState } from "vuex";
+
 export default {
   name: "Tech",
   data() {
-    return {};
+    return {
+      ang: this.getLang(),
+      header: "",
+      left: "",
+      right: "",
+      data: this.getDataFromTech(),
+    };
+  },
+  methods: {
+    ...mapGetters(["getDataFromTech", "getLang"]),
+
+    render() {
+      if (!this.ang) {
+        this.header = this.data.pol[0];
+        this.left = this.data.pol[1];
+        this.right = this.data.pol[2];
+      } else {
+        this.header = this.data.ang[0];
+        this.left = this.data.ang[1];
+        this.right = this.data.ang[2];
+      }
+    },
+  },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
   },
 };
 </script>
 
 <template>
   <section>
-    <h2>Technologie</h2>
+    <h2>{{ header }}</h2>
     <div class="container">
       <div class="list">
-        <h3>Znane:</h3>
+        <h3>{{ left }}:</h3>
         <ul>
           <li>
             Vue / Vuex / Vue Router
@@ -43,14 +78,10 @@ export default {
         </ul>
       </div>
       <div class="list">
-        <h3>Uczę się:</h3>
+        <h3>{{ right }}:</h3>
         <ul>
           <li>TypeScript</li>
           <li>Cypress</li>
-          <li>
-            PHP <font-awesome-icon class="icon" icon="fa-brands fa-php" />
-          </li>
-          <li>MySQL</li>
         </ul>
       </div>
     </div>

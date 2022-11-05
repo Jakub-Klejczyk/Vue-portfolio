@@ -1,26 +1,51 @@
 <script>
+import { mapGetters, mapState } from "vuex";
+
 export default {
   name: "About",
   data() {
-    return {};
+    return {
+      ang: this.getLang(),
+      data: this.getDataFromAbout(),
+      header: "",
+      text: "",
+    };
+  },
+  methods: {
+    ...mapGetters(["getDataFromAbout", "getLang"]),
+
+    render() {
+      if (!this.ang) {
+        this.header = this.data.pol[0];
+        this.text = this.data.pol[1];
+      } else {
+        this.header = this.data.ang[0];
+        this.text = this.data.ang[1];
+      }
+    },
+  },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
   },
 };
 </script>
 
 <template>
   <section>
-    <h2>O mnie</h2>
+    <h2>{{ header }}</h2>
     <div class="container">
       <div class="elem-left"></div>
       <p>
-        Nazywam się Jakub Klejczyk. Jestem Web Developerem koncentrującym się na
-        warstwie Front-endowej. Pracuje głównie przy wykorzystaniu Vue.js.
-        Systematycznie staram się rozwijać swój stack technologiczny. Obecnie
-        uczę się TypeScriptu, a w najbliższym czasie planuje doedukować się w
-        zakresie tworzenia testów jednostkowych i end-to-end. Miałem również
-        doczynienia z językiem PHP, zatem świat Back-endu nie jest mi całkowicie
-        obcy. Chciałbym dalej rozwijać się w tworzeniu aplikacj webowych typu
-        single page.
+        {{ text }}
       </p>
       <div class="elem-right"></div>
     </div>

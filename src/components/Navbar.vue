@@ -1,9 +1,53 @@
 <script>
+import { mapMutations, mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
       active: false,
+      ang: this.getLang(),
+      home: "",
+      about: "",
+      tech: "",
+      exp: "",
+      projects: "",
+      contact: "",
+      data: this.getDataFromNavbar(),
     };
+  },
+
+  methods: {
+    ...mapMutations(["changeLang"]),
+    ...mapGetters(["getDataFromNavbar", "getLang"]),
+
+    render() {
+      if (!this.ang) {
+        this.home = this.data.pol[0];
+        this.about = this.data.pol[1];
+        this.tech = this.data.pol[2];
+        this.exp = this.data.pol[3];
+        this.projects = this.data.pol[4];
+        this.contact = this.data.pol[5];
+      } else {
+        this.home = this.data.ang[0];
+        this.about = this.data.ang[1];
+        this.tech = this.data.ang[2];
+        this.exp = this.data.ang[3];
+        this.projects = this.data.ang[4];
+        this.contact = this.data.ang[5];
+      }
+    },
+  },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
   },
 };
 </script>
@@ -28,11 +72,22 @@ export default {
     <RouterLink to="/contact"
       ><font-awesome-icon icon="fa-solid fa-envelope" class="icon"
     /></RouterLink>
+
+    <font-awesome-icon
+      icon="fa-solid fa-globe"
+      class="icon"
+      @click="changeLang"
+    />
   </nav>
   <font-awesome-icon
     icon="fa-solid fa-bars"
     class="hamburger"
     @click="active = !active"
+  />
+  <font-awesome-icon
+    icon="fa-solid fa-globe"
+    class="lang"
+    @click="changeLang"
   />
   <nav class="mobile" :class="{ 'active-nav': active }">
     <RouterLink
@@ -41,7 +96,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/"
       id="li-one"
-      >Strona główna</RouterLink
+      >{{ home }}</RouterLink
     >
     <RouterLink
       @click="active = !active"
@@ -49,7 +104,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/about"
       id="li-two"
-      >O mnie</RouterLink
+      >{{ about }}</RouterLink
     >
     <RouterLink
       @click="active = !active"
@@ -57,7 +112,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/technology"
       id="li-three"
-      >Technologie</RouterLink
+      >{{ tech }}</RouterLink
     >
     <RouterLink
       @click="active = !active"
@@ -65,7 +120,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/experience"
       id="li-four"
-      >Doświadczenie</RouterLink
+      >{{ exp }}</RouterLink
     >
     <RouterLink
       @click="active = !active"
@@ -73,7 +128,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/projects"
       id="li-five"
-      >Projekty</RouterLink
+      >{{ projects }}</RouterLink
     >
     <RouterLink
       @click="active = !active"
@@ -81,7 +136,7 @@ export default {
       :class="{ 'active-list': active }"
       to="/contact"
       id="li-six"
-      >Kontakt</RouterLink
+      >{{ contact }}</RouterLink
     >
   </nav>
 </template>
@@ -108,8 +163,13 @@ export default {
   width: 2rem;
   height: 2rem;
   color: $secondary;
+  &:last-child {
+    cursor: pointer;
+  }
 }
-
+.lang {
+  display: none;
+}
 .hamburger {
   display: none;
 }
@@ -127,6 +187,17 @@ export default {
     height: 3rem;
     padding: 1rem;
     right: 0;
+    color: $secondary;
+  }
+
+  .lang {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    left: 0;
     color: $secondary;
   }
 

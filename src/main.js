@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import store from "./store/index";
 import {
   faUserSecret,
   faHouse,
@@ -13,13 +14,13 @@ import {
   faBriefcase,
   faPlay,
   faBars,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
   faGithub,
   faHtml5,
   faNpm,
-  faPhp,
   faSass,
   faSquareJs,
   faVuejs,
@@ -41,11 +42,11 @@ library.add(
   faSass,
   faHtml5,
   faNpm,
-  faPhp
+  faGlobe
 );
 
 const app = createApp(App);
 
-app.use(router).component("font-awesome-icon", FontAwesomeIcon);
+app.use(router).use(store).component("font-awesome-icon", FontAwesomeIcon);
 
 app.mount("#app");

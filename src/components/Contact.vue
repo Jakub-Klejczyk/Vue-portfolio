@@ -1,10 +1,12 @@
 <script>
 import emailjs from "@emailjs/browser";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "About",
   data() {
     return {
+      ang: this.getLang(),
       name: "",
       email: "",
       tel: "",
@@ -12,9 +14,37 @@ export default {
       content: "",
       error: "",
       val: true,
+      header: "",
+      place_email: "",
+      place_name: "",
+      place_phone: "",
+      place_topic: "",
+      place_msg: "",
+      input: "",
+      data: this.getDataFromContact(),
     };
   },
   methods: {
+    ...mapGetters(["getDataFromContact", "getLang"]),
+    render() {
+      if (!this.ang) {
+        this.header = this.data.pol[0];
+        this.place_email = this.data.pol[1];
+        this.place_name = this.data.pol[2];
+        this.place_phone = this.data.pol[3];
+        this.place_topic = this.data.pol[4];
+        this.place_msg = this.data.pol[5];
+        this.input = this.data.pol[6];
+      } else {
+        this.header = this.data.ang[0];
+        this.place_email = this.data.ang[1];
+        this.place_name = this.data.ang[2];
+        this.place_phone = this.data.ang[3];
+        this.place_topic = this.data.ang[4];
+        this.place_msg = this.data.ang[5];
+        this.input = this.data.ang[6];
+      }
+    },
     clearForm() {
       this.name = "";
       this.email = "";
@@ -89,41 +119,53 @@ export default {
       this.clearForm();
     },
   },
+  computed: {
+    ...mapState(["eng"]),
+  },
+  mounted() {
+    this.render();
+  },
+  watch: {
+    eng(newValue, oldValue) {
+      this.ang = newValue;
+      this.render();
+    },
+  },
 };
 </script>
 
 <template>
   <section>
-    <h2>Kontakt</h2>
+    <h2>{{ header }}</h2>
     <form action="" @submit.prevent="onSubmit()">
       <input
         type="text"
-        placeholder="Twój adres email"
+        :placeholder="place_email"
         class="input-text"
         v-model="email"
       />
       <div class="middle-elems">
         <input
           type="text"
-          placeholder="Twoje imię"
+          :placeholder="place_name"
           class="input-middle"
           v-model="name"
         />
         <input
           type="text"
-          placeholder="Twój numer telefonu"
+          :placeholder="place_phone"
           class="input-middle"
           v-model="tel"
         />
       </div>
       <input
         type="text"
-        placeholder="Temat"
+        :placeholder="place_topic"
         class="input-text"
         v-model="subject"
       />
       <textarea
-        placeholder="Twoja wiadomosć"
+        :placeholder="place_msg"
         name=""
         id=""
         cols="60"
@@ -132,7 +174,7 @@ export default {
         v-model="content"
       ></textarea>
       <p>{{ error }}</p>
-      <input type="submit" value="Wyślij" class="btn" />
+      <input type="submit" :value="input" class="btn" />
     </form>
   </section>
 </template>
@@ -212,7 +254,7 @@ input:focus {
     align-items: center;
     justify-content: center;
     overflow: auto;
-    height: 100%;
+    height: 100vh;
     padding: 2rem;
   }
   .middle-elems {
