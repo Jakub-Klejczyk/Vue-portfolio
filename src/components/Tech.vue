@@ -81,7 +81,7 @@ export default {
         <h3>{{ right }}:</h3>
         <ul>
           <li>TypeScript</li>
-          <li>Cypress</li>
+          <li>Jest / Cypress</li>
         </ul>
       </div>
     </div>
