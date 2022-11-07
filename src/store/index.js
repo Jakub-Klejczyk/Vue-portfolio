@@ -62,13 +62,13 @@ const store = createStore({
     projects: {
       pol: [
         "Projekty",
-        "Projekt stanowi moje Opus Magnum. Do jego powstania wykorzystane zostały wszystkie technologie jakie udało mi się poznać. Portal Shop jest symulacją sklepu internetowego. Pozwala na stowrzenie konta użytkownika, zapoznanie się ze stroną główną oraz obsługę koszyka.",
+        "Projekt stanowi podsumowanie moich umiejetności. Do jego powstania wykorzystane zostały wszystkie technologie jakie udało mi się poznać. Portal Shop jest symulacją sklepu internetowego. Pozwala na stowrzenie konta użytkownika, zapoznanie się ze stroną główną oraz obsługę koszyka.",
         "Wyszukiwarka repozytoriów Github",
         "Powstała w celu nauki obsługi REST API powszechnie wykorzystywanej w aplikacjach webowych.",
       ],
       ang: [
         "Projects",
-        "Project is my Opus Magnum. To create it I used all technologies that I learned. Portal Shop is a simulation of an online store. Project allows you to create a user account, familiarize yourself with the home page and manage the cart.",
+        "Project is summarise of my skills. To create it I used all technologies that I learned. Portal Shop is a simulation of an online store. Project allows you to create a user account, familiarize yourself with the home page and manage the cart.",
         "Github repository search engine",
         "I created this project to learn how to use REST API which is commonly used in web application.",
       ],

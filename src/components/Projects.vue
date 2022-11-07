@@ -60,9 +60,7 @@ export default {
         </p>
         <p>Vue, Vuex, Vue-Router, TypeScript, Scss, Firebase</p>
         <div class="links">
-          <a
-            href="https://github.com/Jakub-Klejczyk/Opus-magnum.git"
-            target="_blank"
+          <a href="https://github.com/Jakub-Klejczyk/PortalShop" target="_blank"
             ><font-awesome-icon icon="fa-brands fa-github" class="icon"
           /></a>
           <a href="https://portal-shop-project.netlify.app/" target="_blank"
